@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | FashionHub</title>
+    <link rel="stylesheet" href="design-system.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">FashionHub</a></div>
+        <nav>
+            <ul>
+                <li><a href="catalog.html">Men</a></li>
+                <li><a href="catalog.html">Women</a></li>
+                <li><a href="catalog.html">Accessories</a></li>
+                <li><a href="catalog.html">Sale</a></li>
+            </ul>
+        </nav>
+        <div class="header-icons">
+            <span>🔍</span>
+            <span>👤</span>
+            <span>❤️</span>
+            <span>🛒 (1)</span>
+        </div>
+    </header>
+
+    <main class="cart-container">
+        <div class="cart-items">
+            <h2 style="margin-bottom: 2rem; font-family: var(--font-family-headings);">Your Shopping Cart</h2>
+            
+            <div class="cart-item">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Product" class="cart-item-img">
+                <div class="cart-item-details">
+                    <div class="cart-item-name">Yellow Summer Dress</div>
+                    <div class="cart-item-meta">Size: M | Color: Yellow</div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <input type="number" value="1" style="width: 50px; padding: 0.3rem;">
+                        <span style="color: red; cursor: pointer; font-size: 0.8rem;">Remove</span>
+                    </div>
+                </div>
+                <div class="cart-item-price">$89.00</div>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <a href="catalog.html" style="color: var(--primary-color); text-decoration: none; font-weight: bold;">← Continue Shopping</a>
+            </div>
+        </div>
+
+        <div class="cart-summary">
+            <h3 style="margin-bottom: 1.5rem; font-family: var(--font-family-headings);">Order Summary</h3>
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span>$89.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Shipping</span>
+                <span>Calculated at checkout</span>
+            </div>
+            <div class="summary-row">
+                <span>Tax</span>
+                <span>$0.00</span>
+            </div>
+            <div class="summary-total">
+                <div class="summary-row">
+                    <span>Total</span>
+                    <span>$89.00</span>
+                </div>
+            </div>
+            <button class="btn" style="width: 100%; border: none; cursor: pointer; margin-top: 2rem;">Checkout</button>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <h3>FashionHub</h3>
+            <p>Your destination for premium fashion and lifestyle.</p>
+        </div>
+        <div>
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Shipping Policy</a></li>
+                <li><a href="#">Returns</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Newsletter</h3>
+            <p>Subscribe to get special offers and updates.</p>
+        </div>
+    </footer>
+</body>
+</html>
