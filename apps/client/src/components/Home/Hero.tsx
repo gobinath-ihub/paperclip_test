@@ -7,8 +7,13 @@ export const Hero: React.FC = () => {
     <section className="hero-section">
       <div className="hero-content fade-in">
         <h1>Define Your Style</h1>
-        <p>Discover the latest trends in high-end fashion and elevate your wardrobe with our curated collections.</p>
-        <Link to="/catalog" className="btn btn-accent">Shop Collection</Link>
+        <p>
+          Discover the latest trends in high-end fashion and elevate your wardrobe with our curated
+          collections.
+        </p>
+        <Link to="/catalog" className="btn btn-accent">
+          Shop Collection
+        </Link>
       </div>
     </section>
   );

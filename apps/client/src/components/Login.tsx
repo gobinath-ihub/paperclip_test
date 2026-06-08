@@ -50,7 +50,9 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
             placeholder="••••••••"
           />
         </div>
-        <button type="submit" className="btn btn-accent" style={{ width: '100%' }}>Login</button>
+        <button type="submit" className="btn btn-accent" style={{ width: '100%' }}>
+          Login
+        </button>
       </form>
       <div className="auth-toggle">
         Don&apos;t have an account? <Link to="/register">Register</Link>

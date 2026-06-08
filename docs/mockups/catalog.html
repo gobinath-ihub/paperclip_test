@@ -1,132 +1,160 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Catalog | FashionHub</title>
-    <link rel="stylesheet" href="design-system.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="design-system.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header>
-        <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">FashionHub</a></div>
-        <nav>
-            <ul>
-                <li><a href="#">Men</a></li>
-                <li><a href="#">Women</a></li>
-                <li><a href="#">Accessories</a></li>
-                <li><a href="#">Sale</a></li>
-            </ul>
-        </nav>
-        <div class="header-icons">
-            <span>🔍</span>
-            <span>👤</span>
-            <span>❤️</span>
-            <span>🛒</span>
-        </div>
+      <div class="logo">
+        <a href="index.html" style="text-decoration: none; color: inherit">FashionHub</a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Women</a></li>
+          <li><a href="#">Accessories</a></li>
+          <li><a href="#">Sale</a></li>
+        </ul>
+      </nav>
+      <div class="header-icons">
+        <span>🔍</span>
+        <span>👤</span>
+        <span>❤️</span>
+        <span>🛒</span>
+      </div>
     </header>
 
     <div class="catalog-container">
-        <aside class="sidebar">
-            <div class="filter-group">
-                <h3>Categories</h3>
-                <ul>
-                    <li><input type="checkbox"> Men's Clothing</li>
-                    <li><input type="checkbox"> Women's Clothing</li>
-                    <li><input type="checkbox"> Accessories</li>
-                    <li><input type="checkbox"> Shoes</li>
-                </ul>
-            </div>
-            <div class="filter-group">
-                <h3>Price Range</h3>
-                <ul>
-                    <li><input type="radio" name="price"> $0 - $50</li>
-                    <li><input type="radio" name="price"> $50 - $100</li>
-                    <li><input type="radio" name="price"> $100 - $500</li>
-                    <li><input type="radio" name="price"> $500+</li>
-                </ul>
-            </div>
-            <div class="filter-group">
-                <h3>Size</h3>
-                <ul>
-                    <li><input type="checkbox"> S</li>
-                    <li><input type="checkbox"> M</li>
-                    <li><input type="checkbox"> L</li>
-                    <li><input type="checkbox"> XL</li>
-                </ul>
-            </div>
-        </aside>
+      <aside class="sidebar">
+        <div class="filter-group">
+          <h3>Categories</h3>
+          <ul>
+            <li><input type="checkbox" /> Men's Clothing</li>
+            <li><input type="checkbox" /> Women's Clothing</li>
+            <li><input type="checkbox" /> Accessories</li>
+            <li><input type="checkbox" /> Shoes</li>
+          </ul>
+        </div>
+        <div class="filter-group">
+          <h3>Price Range</h3>
+          <ul>
+            <li><input type="radio" name="price" /> $0 - $50</li>
+            <li><input type="radio" name="price" /> $50 - $100</li>
+            <li><input type="radio" name="price" /> $100 - $500</li>
+            <li><input type="radio" name="price" /> $500+</li>
+          </ul>
+        </div>
+        <div class="filter-group">
+          <h3>Size</h3>
+          <ul>
+            <li><input type="checkbox" /> S</li>
+            <li><input type="checkbox" /> M</li>
+            <li><input type="checkbox" /> L</li>
+            <li><input type="checkbox" /> XL</li>
+          </ul>
+        </div>
+      </aside>
 
-        <main>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-                <p>Showing 1-12 of 48 products</p>
-                <select style="padding: 0.5rem; border: 1px solid var(--border-color);">
-                    <option>Sort by: Newest</option>
-                    <option>Price: Low to High</option>
-                    <option>Price: High to Low</option>
-                    <option>Most Popular</option>
-                </select>
-            </div>
+      <main>
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+          "
+        >
+          <p>Showing 1-12 of 48 products</p>
+          <select style="padding: 0.5rem; border: 1px solid var(--border-color)">
+            <option>Sort by: Newest</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Most Popular</option>
+          </select>
+        </div>
 
-            <div class="product-grid">
-                <!-- Product Card 1 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Product" class="product-image">
-                    <button class="add-to-cart-btn">🛒</button>
-                    <div class="product-info">
-                        <div class="product-name">Yellow Summer Dress</div>
-                        <div class="product-price">$89.00</div>
-                    </div>
-                </div>
-                <!-- Product Card 2 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1539106609512-725e3652e361?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Product" class="product-image">
-                    <button class="add-to-cart-btn">🛒</button>
-                    <div class="product-info">
-                        <div class="product-name">Classic Leather Jacket</div>
-                        <div class="product-price">$199.00</div>
-                    </div>
-                </div>
-                <!-- Product Card 3 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Product" class="product-image">
-                    <button class="add-to-cart-btn">🛒</button>
-                    <div class="product-info">
-                        <div class="product-name">White Cotton Shirt</div>
-                        <div class="product-price">$45.00</div>
-                    </div>
-                </div>
-                <!-- Product Card 4 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Product" class="product-image">
-                    <button class="add-to-cart-btn">🛒</button>
-                    <div class="product-info">
-                        <div class="product-name">Red Running Shoes</div>
-                        <div class="product-price">$120.00</div>
-                    </div>
-                </div>
+        <div class="product-grid">
+          <!-- Product Card 1 -->
+          <div class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="Product"
+              class="product-image"
+            />
+            <button class="add-to-cart-btn">🛒</button>
+            <div class="product-info">
+              <div class="product-name">Yellow Summer Dress</div>
+              <div class="product-price">$89.00</div>
             </div>
-        </main>
+          </div>
+          <!-- Product Card 2 -->
+          <div class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1539106609512-725e3652e361?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="Product"
+              class="product-image"
+            />
+            <button class="add-to-cart-btn">🛒</button>
+            <div class="product-info">
+              <div class="product-name">Classic Leather Jacket</div>
+              <div class="product-price">$199.00</div>
+            </div>
+          </div>
+          <!-- Product Card 3 -->
+          <div class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1509631179647-0177331693ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="Product"
+              class="product-image"
+            />
+            <button class="add-to-cart-btn">🛒</button>
+            <div class="product-info">
+              <div class="product-name">White Cotton Shirt</div>
+              <div class="product-price">$45.00</div>
+            </div>
+          </div>
+          <!-- Product Card 4 -->
+          <div class="product-card">
+            <img
+              src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="Product"
+              class="product-image"
+            />
+            <button class="add-to-cart-btn">🛒</button>
+            <div class="product-info">
+              <div class="product-name">Red Running Shoes</div>
+              <div class="product-price">$120.00</div>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
 
     <footer>
-        <div>
-            <h3>FashionHub</h3>
-            <p>Your destination for premium fashion and lifestyle.</p>
-        </div>
-        <div>
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Shipping Policy</a></li>
-                <li><a href="#">Returns</a></li>
-                <li><a href="#">FAQ</a></li>
-            </ul>
-        </div>
-        <div>
-            <h3>Newsletter</h3>
-            <p>Subscribe to get special offers and updates.</p>
-        </div>
+      <div>
+        <h3>FashionHub</h3>
+        <p>Your destination for premium fashion and lifestyle.</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Newsletter</h3>
+        <p>Subscribe to get special offers and updates.</p>
+      </div>
     </footer>
-</body>
+  </body>
 </html>

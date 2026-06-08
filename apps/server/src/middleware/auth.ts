@@ -28,7 +28,8 @@ export const authenticate = async (req: AuthRequest, res: Response, next: NextFu
 export const authorizeAdmin = async (req: AuthRequest, res: Response, next: NextFunction) => {
   try {
     const user = await prisma.user.findUnique({ where: { id: req.userId } });
-    if (user?.email === 'admin@fashionhub.com') { // Simple admin check for now
+    if (user?.email === 'admin@fashionhub.com') {
+      // Simple admin check for now
       next();
     } else {
       res.status(403).json({ error: 'Admin access required' });

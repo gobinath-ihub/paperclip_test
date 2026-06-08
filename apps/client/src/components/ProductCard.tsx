@@ -9,16 +9,28 @@ interface ProductCardProps {
   onViewDetails: (productId: number) => void;
 }
 
-export const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart, onViewDetails }) => {
+export const ProductCard: React.FC<ProductCardProps> = ({
+  product,
+  onAddToCart,
+  onViewDetails,
+}) => {
   return (
     <div className="product-card fade-in">
       <div className="product-image-container">
         <img src={product.image} alt={product.name} className="product-image" />
         <div className="product-actions">
-          <button className="action-btn" onClick={() => onAddToCart(product.id)} title="Add to Cart">
+          <button
+            className="action-btn"
+            onClick={() => onAddToCart(product.id)}
+            title="Add to Cart"
+          >
             <ShoppingCart size={20} />
           </button>
-          <button className="action-btn" onClick={() => onViewDetails(product.id)} title="View Details">
+          <button
+            className="action-btn"
+            onClick={() => onViewDetails(product.id)}
+            title="View Details"
+          >
             <Eye size={20} />
           </button>
         </div>

@@ -63,7 +63,9 @@ nav a {
 
 .hero {
   height: 80vh;
-  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -186,7 +188,7 @@ nav a {
 }
 
 .product-card:hover {
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .product-image {
@@ -223,7 +225,7 @@ nav a {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -296,7 +298,8 @@ nav a {
   transition: all 0.3s ease;
 }
 
-.size-chip:hover, .size-chip.active {
+.size-chip:hover,
+.size-chip.active {
   background: var(--primary-color);
   color: var(--light-text);
   border-color: var(--primary-color);
@@ -524,7 +527,8 @@ nav a {
   border: 1px solid var(--border-color);
 }
 
-.admin-table th, .admin-table td {
+.admin-table th,
+.admin-table td {
   padding: 1rem;
   text-align: left;
   border-bottom: 1px solid var(--border-color);
@@ -564,6 +568,10 @@ footer a {
 }
 
 @media (max-width: 768px) {
-  nav { display: none; }
-  .hero h1 { font-size: 2.5rem; }
+  nav {
+    display: none;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
 }

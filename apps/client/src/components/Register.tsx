@@ -61,7 +61,9 @@ export const Register: React.FC<RegisterProps> = ({ onRegister }) => {
             placeholder="••••••••"
           />
         </div>
-        <button type="submit" className="btn btn-accent" style={{ width: '100%' }}>Create Account</button>
+        <button type="submit" className="btn btn-accent" style={{ width: '100%' }}>
+          Create Account
+        </button>
       </form>
       <div className="auth-toggle">
         Already have an account? <Link to="/login">Login</Link>

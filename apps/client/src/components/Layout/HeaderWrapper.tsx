@@ -4,10 +4,11 @@ import { useCart } from '../../context/CartContext';
 
 interface HeaderWrapperProps {
   token: string | null;
+  user: { email: string; role?: string } | null;
   onLogout: () => void;
 }
 
-export const HeaderWrapper: React.FC<HeaderWrapperProps> = ({ token, onLogout }) => {
+export const HeaderWrapper: React.FC<HeaderWrapperProps> = ({ token, user, onLogout }) => {
   const { cartCount } = useCart();
-  return <Header token={token} onLogout={onLogout} cartCount={cartCount} />;
+  return <Header token={token} user={user} onLogout={onLogout} cartCount={cartCount} />;
 };

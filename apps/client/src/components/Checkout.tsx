@@ -20,9 +20,13 @@ export const Checkout: React.FC<CheckoutProps> = ({ token }) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await axios.post('/api/cart/checkout', { address: `${address}, ${city}, ${zip}` }, {
-        headers: { Authorization: `Bearer ${token}` }
-      });
+      await axios.post(
+        '/api/cart/checkout',
+        { address: `${address}, ${city}, ${zip}` },
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       fetchCartCount();
       setSuccess(true);
       setTimeout(() => navigate('/'), 3000);
@@ -50,7 +54,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ token }) => {
         <form onSubmit={handleSubmit} className="checkout-form">
           <h3>Shipping Information</h3>
           {error && <div className="error-message">{error}</div>}
-          
+
           <div className="form-group">
             <label>Street Address</label>
             <input
@@ -61,7 +65,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ token }) => {
               placeholder="123 Fashion St"
             />
           </div>
-          
+
           <div className="form-row">
             <div className="form-group">
               <label>City</label>
@@ -89,10 +93,17 @@ export const Checkout: React.FC<CheckoutProps> = ({ token }) => {
           <p className="payment-note">Credit Card (Demo Mode)</p>
           <div className="form-group">
             <label>Card Number</label>
-            <input type="text" placeholder="XXXX XXXX XXXX XXXX" disabled defaultValue="4242 4242 4242 4242" />
+            <input
+              type="text"
+              placeholder="XXXX XXXX XXXX XXXX"
+              disabled
+              defaultValue="4242 4242 4242 4242"
+            />
           </div>
 
-          <button type="submit" className="btn btn-accent checkout-submit">Place Order</button>
+          <button type="submit" className="btn btn-accent checkout-submit">
+            Place Order
+          </button>
         </form>
       </div>
     </div>

@@ -8,16 +8,27 @@ export const Footer: React.FC = () => {
       <div className="footer-container">
         <div className="footer-section">
           <h3 className="footer-logo">FashionHub</h3>
-          <p>Your destination for premium fashion and lifestyle. We define modern elegance through curated collections and timeless style.</p>
+          <p>
+            Your destination for premium fashion and lifestyle. We define modern elegance through
+            curated collections and timeless style.
+          </p>
         </div>
-        
+
         <div className="footer-section">
           <h3>Quick Links</h3>
           <ul>
-            <li><Link to="/catalog">Shop All</Link></li>
-            <li><Link to="/about">About Us</Link></li>
-            <li><Link to="/shipping">Shipping Policy</Link></li>
-            <li><Link to="/returns">Returns</Link></li>
+            <li>
+              <Link to="/catalog">Shop All</Link>
+            </li>
+            <li>
+              <Link to="/about">About Us</Link>
+            </li>
+            <li>
+              <Link to="/shipping">Shipping Policy</Link>
+            </li>
+            <li>
+              <Link to="/returns">Returns</Link>
+            </li>
           </ul>
         </div>
 

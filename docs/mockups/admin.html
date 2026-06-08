@@ -1,78 +1,83 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Dashboard | FashionHub</title>
-    <link rel="stylesheet" href="design-system.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="design-system.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="admin-container">
-        <aside class="admin-sidebar">
-            <div class="logo" style="color: #fff; font-size: 1.2rem;">FashionHub</div>
-            <ul>
-                <li class="active">Dashboard</li>
-                <li>Products</li>
-                <li>Orders</li>
-                <li>Customers</li>
-                <li>Settings</li>
-            </ul>
-        </aside>
-        <main class="admin-main">
-            <h2 style="font-family: var(--font-family-headings); margin-bottom: 2rem;">Store Overview</h2>
-            
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div style="font-size: 0.8rem; color: #666; text-transform: uppercase;">Total Sales</div>
-                    <div class="stat-value">$12,450</div>
-                </div>
-                <div class="stat-card">
-                    <div style="font-size: 0.8rem; color: #666; text-transform: uppercase;">Orders</div>
-                    <div class="stat-value">142</div>
-                </div>
-                <div class="stat-card">
-                    <div style="font-size: 0.8rem; color: #666; text-transform: uppercase;">Visitors</div>
-                    <div class="stat-value">5,230</div>
-                </div>
-            </div>
+      <aside class="admin-sidebar">
+        <div class="logo" style="color: #fff; font-size: 1.2rem">FashionHub</div>
+        <ul>
+          <li class="active">Dashboard</li>
+          <li>Products</li>
+          <li>Orders</li>
+          <li>Customers</li>
+          <li>Settings</li>
+        </ul>
+      </aside>
+      <main class="admin-main">
+        <h2 style="font-family: var(--font-family-headings); margin-bottom: 2rem">
+          Store Overview
+        </h2>
 
-            <h3 style="margin-bottom: 1.5rem;">Recent Orders</h3>
-            <table class="admin-table">
-                <thead>
-                    <tr>
-                        <th>Order ID</th>
-                        <th>Customer</th>
-                        <th>Date</th>
-                        <th>Status</th>
-                        <th>Total</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>#ORD-7821</td>
-                        <td>Jane Doe</td>
-                        <td>Jun 05, 2026</td>
-                        <td><span style="color: green;">Delivered</span></td>
-                        <td>$89.00</td>
-                    </tr>
-                    <tr>
-                        <td>#ORD-7820</td>
-                        <td>John Smith</td>
-                        <td>Jun 05, 2026</td>
-                        <td><span style="color: orange;">Processing</span></td>
-                        <td>$145.50</td>
-                    </tr>
-                    <tr>
-                        <td>#ORD-7819</td>
-                        <td>Alice Johnson</td>
-                        <td>Jun 04, 2026</td>
-                        <td><span style="color: green;">Delivered</span></td>
-                        <td>$210.00</td>
-                    </tr>
-                </tbody>
-            </table>
-        </main>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div style="font-size: 0.8rem; color: #666; text-transform: uppercase">Total Sales</div>
+            <div class="stat-value">$12,450</div>
+          </div>
+          <div class="stat-card">
+            <div style="font-size: 0.8rem; color: #666; text-transform: uppercase">Orders</div>
+            <div class="stat-value">142</div>
+          </div>
+          <div class="stat-card">
+            <div style="font-size: 0.8rem; color: #666; text-transform: uppercase">Visitors</div>
+            <div class="stat-value">5,230</div>
+          </div>
+        </div>
+
+        <h3 style="margin-bottom: 1.5rem">Recent Orders</h3>
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#ORD-7821</td>
+              <td>Jane Doe</td>
+              <td>Jun 05, 2026</td>
+              <td><span style="color: green">Delivered</span></td>
+              <td>$89.00</td>
+            </tr>
+            <tr>
+              <td>#ORD-7820</td>
+              <td>John Smith</td>
+              <td>Jun 05, 2026</td>
+              <td><span style="color: orange">Processing</span></td>
+              <td>$145.50</td>
+            </tr>
+            <tr>
+              <td>#ORD-7819</td>
+              <td>Alice Johnson</td>
+              <td>Jun 04, 2026</td>
+              <td><span style="color: green">Delivered</span></td>
+              <td>$210.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
     </div>
-</body>
+  </body>
 </html>

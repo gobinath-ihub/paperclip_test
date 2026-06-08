@@ -35,9 +35,13 @@ export const ProductDetail: React.FC<{ token: string | null }> = ({ token }) => 
       return;
     }
     try {
-      await axios.post('/api/cart', { productId: product?.id, quantity: 1 }, {
-        headers: { Authorization: `Bearer ${token}` }
-      });
+      await axios.post(
+        '/api/cart',
+        { productId: product?.id, quantity: 1 },
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       fetchCartCount();
       alert('Added to cart!');
     } catch {
@@ -63,7 +67,7 @@ export const ProductDetail: React.FC<{ token: string | null }> = ({ token }) => 
           <p className="detail-category">{product.category?.name}</p>
           <h1 className="detail-name">{product.name}</h1>
           <p className="detail-price">${product.price.toFixed(2)}</p>
-          
+
           <div className="detail-description">
             <p>{product.description}</p>
           </div>
@@ -71,9 +75,9 @@ export const ProductDetail: React.FC<{ token: string | null }> = ({ token }) => 
           <div className="size-selector">
             <p className="selector-label">Select Size</p>
             <div className="size-options">
-              {['S', 'M', 'L', 'XL'].map(size => (
-                <button 
-                  key={size} 
+              {['S', 'M', 'L', 'XL'].map((size) => (
+                <button
+                  key={size}
                   className={`size-btn ${selectedSize === size ? 'active' : ''}`}
                   onClick={() => setSelectedSize(size)}
                 >

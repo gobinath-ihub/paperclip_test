@@ -15,10 +15,10 @@ export const Cart: React.FC<CartProps> = ({ token }) => {
   const [loading, setLoading] = useState(true);
   const { fetchCartCount } = useCart();
 
-  const fetchCart = async () => {
+  const fetchCart = React.useCallback(async () => {
     try {
       const response = await axios.get('/api/cart', {
-        headers: { Authorization: `Bearer ${token}` }
+        headers: { Authorization: `Bearer ${token}` },
       });
       setCart(response.data);
     } catch (error) {
@@ -26,18 +26,25 @@ export const Cart: React.FC<CartProps> = ({ token }) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [token]);
 
   useEffect(() => {
-    fetchCart();
-  }, [token]);
+    const loadCart = async () => {
+      await fetchCart();
+    };
+    loadCart();
+  }, [fetchCart]);
 
   const updateQuantity = async (productId: number, quantity: number) => {
     if (quantity < 1) return;
     try {
-      await axios.post('/api/cart', { productId, quantity, set: true }, {
-        headers: { Authorization: `Bearer ${token}` }
-      });
+      await axios.post(
+        '/api/cart',
+        { productId, quantity, set: true },
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       fetchCart();
       fetchCartCount();
     } catch (error) {
@@ -48,7 +55,7 @@ export const Cart: React.FC<CartProps> = ({ token }) => {
   const removeItem = async (productId: number) => {
     try {
       await axios.delete(`/api/cart/${productId}`, {
-        headers: { Authorization: `Bearer ${token}` }
+        headers: { Authorization: `Bearer ${token}` },
       });
       fetchCart();
       fetchCartCount();
@@ -65,13 +72,17 @@ export const Cart: React.FC<CartProps> = ({ token }) => {
         <ShoppingBag size={64} color="#ccc" />
         <h2>Your cart is empty</h2>
         <p>Looks like you haven&apos;t added anything to your cart yet.</p>
-        <Link to="/catalog" className="btn btn-accent">Start Shopping</Link>
+        <Link to="/catalog" className="btn btn-accent">
+          Start Shopping
+        </Link>
       </div>
     );
   }
 
-  const subtotal = cart.items.reduce((acc: number, item: CartItemType) => 
-    acc + (item.product?.price || 0) * item.quantity, 0);
+  const subtotal = cart.items.reduce(
+    (acc: number, item: CartItemType) => acc + (item.product?.price || 0) * item.quantity,
+    0
+  );
 
   return (
     <div className="container section fade-in">
@@ -85,19 +96,25 @@ export const Cart: React.FC<CartProps> = ({ token }) => {
                 <h3>{item.product?.name}</h3>
                 <p className="item-price">${item.product?.price.toFixed(2)}</p>
                 <div className="quantity-controls">
-                  <button onClick={() => updateQuantity(item.productId, item.quantity - 1)}><Minus size={16} /></button>
+                  <button onClick={() => updateQuantity(item.productId, item.quantity - 1)}>
+                    <Minus size={16} />
+                  </button>
                   <span>{item.quantity}</span>
-                  <button onClick={() => updateQuantity(item.productId, item.quantity + 1)}><Plus size={16} /></button>
+                  <button onClick={() => updateQuantity(item.productId, item.quantity + 1)}>
+                    <Plus size={16} />
+                  </button>
                 </div>
               </div>
               <div className="cart-item-total">
                 <p>${((item.product?.price || 0) * item.quantity).toFixed(2)}</p>
-                <button className="remove-btn" onClick={() => removeItem(item.productId)}><Trash2 size={18} /></button>
+                <button className="remove-btn" onClick={() => removeItem(item.productId)}>
+                  <Trash2 size={18} />
+                </button>
               </div>
             </div>
           ))}
         </div>
-        
+
         <div className="cart-summary-box">
           <h3>Order Summary</h3>
           <div className="summary-row">
@@ -112,7 +129,9 @@ export const Cart: React.FC<CartProps> = ({ token }) => {
             <span>Estimated Total</span>
             <span>${subtotal.toFixed(2)}</span>
           </div>
-          <Link to="/checkout" className="btn btn-accent checkout-btn">Proceed to Checkout</Link>
+          <Link to="/checkout" className="btn btn-accent checkout-btn">
+            Proceed to Checkout
+          </Link>
           <p className="secure-checkout">🔒 Secure Checkout</p>
         </div>
       </div>

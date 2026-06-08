@@ -31,11 +31,13 @@ export const Catalog: React.FC<{ token: string | null }> = ({ token }) => {
     try {
       let categoryId = '';
       if (currentCategory) {
-        const cat = categories.find(c => c.name.toLowerCase() === currentCategory.toLowerCase());
+        const cat = categories.find((c) => c.name.toLowerCase() === currentCategory.toLowerCase());
         if (cat) categoryId = cat.id.toString();
       }
-      
-      const response = await axios.get(`/api/products${categoryId ? `?categoryId=${categoryId}` : ''}`);
+
+      const response = await axios.get(
+        `/api/products${categoryId ? `?categoryId=${categoryId}` : ''}`
+      );
       setProducts(response.data);
     } catch {
       console.error('Failed to fetch products');
@@ -45,11 +47,17 @@ export const Catalog: React.FC<{ token: string | null }> = ({ token }) => {
   }, [currentCategory, categories]);
 
   useEffect(() => {
-    fetchCategories();
+    const loadCategories = async () => {
+      await fetchCategories();
+    };
+    loadCategories();
   }, [fetchCategories]);
 
   useEffect(() => {
-    fetchProducts();
+    const loadProducts = async () => {
+      await fetchProducts();
+    };
+    loadProducts();
   }, [fetchProducts]);
 
   const handleAddToCart = async (productId: number) => {
@@ -58,9 +66,13 @@ export const Catalog: React.FC<{ token: string | null }> = ({ token }) => {
       return;
     }
     try {
-      await axios.post('/api/cart', { productId, quantity: 1 }, {
-        headers: { Authorization: `Bearer ${token}` }
-      });
+      await axios.post(
+        '/api/cart',
+        { productId, quantity: 1 },
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       fetchCartCount();
       alert('Product added to cart!');
     } catch {
@@ -77,8 +89,13 @@ export const Catalog: React.FC<{ token: string | null }> = ({ token }) => {
             <li className={!currentCategory ? 'active' : ''}>
               <button onClick={() => navigate('/catalog')}>All Products</button>
             </li>
-            {categories.map(cat => (
-              <li key={cat.id} className={currentCategory?.toLowerCase() === cat.name.toLowerCase() ? 'active' : ''}>
+            {categories.map((cat) => (
+              <li
+                key={cat.id}
+                className={
+                  currentCategory?.toLowerCase() === cat.name.toLowerCase() ? 'active' : ''
+                }
+              >
                 <button onClick={() => navigate(`/catalog?category=${cat.name.toLowerCase()}`)}>
                   {cat.name}
                 </button>
@@ -97,7 +114,7 @@ export const Catalog: React.FC<{ token: string | null }> = ({ token }) => {
             <div className="loading">Loading products...</div>
           ) : (
             <div className="product-grid">
-              {products.map(product => (
+              {products.map((product) => (
                 <ProductCard
                   key={product.id}
                   product={product}
@@ -107,7 +124,7 @@ export const Catalog: React.FC<{ token: string | null }> = ({ token }) => {
               ))}
             </div>
           )}
-          
+
           {!loading && products.length === 0 && (
             <div className="no-products">
               <p>No products found in this category.</p>

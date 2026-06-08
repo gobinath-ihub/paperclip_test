@@ -7,6 +7,23 @@ const router = Router();
 // Middleware to ensure all admin routes are authenticated and authorized
 router.use(authenticate, authorizeAdmin);
 
+// GET /api/admin/stats
+router.get('/stats', async (req: AuthRequest, res: Response) => {
+  try {
+    const totalOrders = await prisma.order.count();
+    const orders = await prisma.order.findMany();
+    const totalSales = orders.reduce((acc, order) => acc + (order.total || 0), 0);
+    // For visitors, we'll return a static number or 0 for now
+    res.json({
+      totalSales,
+      orderCount: totalOrders,
+      visitorCount: 1250, // Mocked for now
+    });
+  } catch {
+    res.status(500).json({ error: 'Failed to fetch stats' });
+  }
+});
+
 // --- Product Management ---
 
 // GET /api/admin/products

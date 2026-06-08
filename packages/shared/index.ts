@@ -36,7 +36,8 @@ export interface Cart {
 export interface Order {
   id: number;
   userId: number;
-  items: string; // Stored as JSON string
+  user?: User;
+  items: any; // Can be JSON string or parsed object
   total: number;
   status: string;
   createdAt: string;

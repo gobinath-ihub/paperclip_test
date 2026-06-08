@@ -6,21 +6,24 @@ const categories = [
   {
     id: 'men',
     name: 'Men',
-    image: 'https://images.unsplash.com/photo-1488161628813-04466f872be2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-    link: '/catalog?category=men'
+    image:
+      'https://images.unsplash.com/photo-1488161628813-04466f872be2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    link: '/catalog?category=men',
   },
   {
     id: 'women',
     name: 'Women',
-    image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-    link: '/catalog?category=women'
+    image:
+      'https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    link: '/catalog?category=women',
   },
   {
     id: 'accessories',
     name: 'Accessories',
-    image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-    link: '/catalog?category=accessories'
-  }
+    image:
+      'https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    link: '/catalog?category=accessories',
+  },
 ];
 
 export const CategoryGrid: React.FC = () => {

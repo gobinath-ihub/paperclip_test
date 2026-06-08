@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import "dotenv/config";
+import 'dotenv/config';
 import authRoutes from './src/routes/auth.js';
 import cartRoutes from './src/routes/cart.js';
 import adminRoutes from './src/routes/admin.js';
@@ -34,15 +34,17 @@ app.get('/api/products', async (req, res) => {
       where: {
         AND: [
           categoryId ? { categoryId: Number(categoryId) } : {},
-          search ? {
-            OR: [
-              { name: { contains: String(search) } },
-              { description: { contains: String(search) } }
-            ]
-          } : {}
-        ]
+          search
+            ? {
+                OR: [
+                  { name: { contains: String(search) } },
+                  { description: { contains: String(search) } },
+                ],
+              }
+            : {},
+        ],
       },
-      include: { category: true }
+      include: { category: true },
     });
     res.json(products);
   } catch {
