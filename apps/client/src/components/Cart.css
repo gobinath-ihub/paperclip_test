@@ -1,0 +1,147 @@
+.cart-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.cart-items-list {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  padding: 2rem;
+}
+
+.cart-item-row {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+  align-items: center;
+}
+
+.cart-item-row:last-child {
+  border-bottom: none;
+}
+
+.cart-item-image {
+  width: 100px;
+  height: 120px;
+  object-fit: cover;
+}
+
+.cart-item-info {
+  flex: 1;
+}
+
+.cart-item-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.item-price {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid var(--border-color);
+  width: fit-content;
+  padding: 2px;
+}
+
+.quantity-controls button {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.cart-item-total {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100px;
+}
+
+.cart-item-total p {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #999;
+  transition: color 0.3s;
+}
+
+.remove-btn:hover {
+  color: #d32f2f;
+}
+
+.cart-summary-box {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  padding: 2rem;
+}
+
+.cart-summary-box h3 {
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+.summary-row.total {
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+  margin-top: 1rem;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.checkout-btn {
+  width: 100%;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.secure-checkout {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 6rem 1rem;
+}
+
+.empty-cart h2 {
+  margin: 1.5rem 0 0.5rem;
+}
+
+.empty-cart p {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 992px) {
+  .cart-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ESNext",
+    "baseUrl": ".",
+    "paths": {
+      "@fashionhub/shared": ["../../packages/shared"]
+    }
+  },
+  "include": ["."],
+  "exclude": ["node_modules", "dist"]
+}
