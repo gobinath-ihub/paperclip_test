@@ -69,6 +69,14 @@ router.delete('/:productId', authenticate, async (req: AuthRequest, res: Respons
 // POST /api/cart/checkout
 router.post('/checkout', authenticate, async (req: AuthRequest, res: Response) => {
   try {
+    const user = await prisma.user.findUnique({
+      where: { id: req.userId },
+    });
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
     const cart = await prisma.cart.findUnique({
       where: { userId: req.userId },
       include: { items: { include: { product: true } } },
@@ -78,7 +86,16 @@ router.post('/checkout', authenticate, async (req: AuthRequest, res: Response) =
       return res.status(400).json({ error: 'Cart is empty' });
     }
 
-    const total = cart.items.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
+    let total = cart.items.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
+
+    if (user.country) {
+      const vatRate = await prisma.vatRate.findUnique({
+        where: { country: user.country },
+      });
+      if (vatRate) {
+        total += total * vatRate.rate;
+      }
+    }
 
     const order = await prisma.order.create({
       data: {

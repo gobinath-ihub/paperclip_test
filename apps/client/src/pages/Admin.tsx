@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Admin.css';
-import { Product, Order } from '@fashionhub/shared';
+import type { Product, Order } from '@fashionhub/shared';
 
 interface AdminProps {
   token: string | null;

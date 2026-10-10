@@ -37,7 +37,7 @@ export interface Order {
   id: number;
   userId: number;
   user?: User;
-  items: any; // Can be JSON string or parsed object
+  items: unknown; // Can be JSON string or parsed object
   total: number;
   status: string;
   createdAt: string;

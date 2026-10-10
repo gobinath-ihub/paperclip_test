@@ -18,7 +18,15 @@ async function main() {
       password: adminPassword,
       name: 'Admin User',
       role: 'ADMIN',
+      country: 'USA',
     },
+  });
+
+  await prisma.vatRate.createMany({
+    data: [
+      { country: 'FRA', rate: 0.20 },
+      { country: 'DEU', rate: 0.19 },
+    ],
   });
 
   const men = await prisma.category.create({

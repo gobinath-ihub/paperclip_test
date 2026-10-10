@@ -4,6 +4,7 @@ import 'dotenv/config';
 import authRoutes from './src/routes/auth.js';
 import cartRoutes from './src/routes/cart.js';
 import adminRoutes from './src/routes/admin.js';
+import externalRoutes from './src/routes/external.js';
 import prisma from './src/db.js';
 
 const app = express();
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/cart', cartRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/v1/external', externalRoutes);
 
 app.get('/', (req, res) => {
   res.send('FashionHub API is running');

@@ -5,3 +5,11 @@ dist
 *.db
 .DS_Store
 package-lock.json
+
+# Agent scratch payloads
+*_payload.json
+status_update.json
+update.json
+design_doc*.json
+plan.json
+test_payload.json
